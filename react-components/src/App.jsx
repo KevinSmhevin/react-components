@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import Star from './components/Star';
 import Menu from './components/Menu/index';
 import Badge from './components/Badges/Badge';
+import Banner from './components/Banners/Banner';
 
 export default function App() {
   return (
@@ -37,6 +38,25 @@ export default function App() {
         <Badge shape="pill">Pill</Badge>
         <Badge color="red">Red</Badge>
         <Badge color="green" shape="pill" size="large">Green Large Pill</Badge>
+
+        <hr></hr>
+
+        <h3>Banner Component</h3>
+        <Banner status="success">
+            <h1>Success</h1>
+            <p>This is a success banner.</p>
+        </Banner>
+        <Banner status="warning">
+            <p>This is a warning banner.</p>
+        </Banner>
+        <Banner status="error">
+            <h1>Error</h1>
+            <p>This is an error banner.</p>
+        </Banner>
+        <Banner status="neutral">
+            <h1>Info</h1>
+        </Banner>
+
     </>
   )
 }

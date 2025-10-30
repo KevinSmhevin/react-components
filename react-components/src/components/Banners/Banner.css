@@ -1,0 +1,78 @@
+.banner {
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    height: auto;
+    width: 100%;
+    font-size: 14px;
+
+}
+
+.banner > img {
+    height: 20px;
+    width: 20px;
+    margin-right: 12px;
+}
+
+.banner-multi {
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-single {
+    display: flex;
+    align-items: center;
+}
+
+.banner-title > img {
+    height: 24px;
+    width: 24px;
+    margin-right: 12px;
+}
+
+.banner h1, 
+.banner h2, 
+.banner h3, 
+.banner h4, 
+.banner h5, 
+.banner h6 {
+    font-size: 14px;
+}
+
+.banner-title h1, 
+.banner-title h2, 
+.banner-title h3, 
+.banner-title h4, 
+.banner-title h5, 
+.banner-title h6 {
+    font-size: 14px;
+}
+
+.banner-title {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.banner-content {
+    padding-left: 36px;
+}
+
+.banner-success {
+    background-color: #ECFDF5;
+}
+
+.banner-warning {
+    background-color: #FFFBEB;
+}
+
+.banner-error {
+    background-color: #FEF2F2
+}
+
+.banner-neutral {
+    background-color: #EFF6FF;
+}
