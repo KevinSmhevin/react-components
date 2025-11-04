@@ -63,3 +63,35 @@
     color: #666;
     line-height: 1.5;
 }
+
+.card-icon-blue {
+    background-color: #3F75FE;
+}
+
+.card-icon-gray {
+    background-color: #F3F4F6;
+}
+
+.card-icon-red {
+    background-color: #FF5252;
+}
+
+.card-icon-yellow {
+    background-color: #FFC107;
+}
+
+.card-icon-green {
+    background-color: #4CAF50;
+}
+
+.card-icon-indigo {
+    background-color: #3F51B5;
+}
+
+.card-icon-purple {
+    background-color: #9C27B0;
+}
+
+.card-icon-pink {
+    background-color: #E91E63;
+}

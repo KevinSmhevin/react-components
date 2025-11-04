@@ -62,9 +62,10 @@ export default function App() {
 
         <hr></hr>
 
+        <h3>Card Component</h3>
+
         <Card>
-          <Card.Icon>
-            <MdOutlineKeyboardArrowDown />
+          <Card.Icon color="red">
           </Card.Icon>
           <Card.Content>
             <h2>Card Title</h2>
@@ -82,6 +83,8 @@ export default function App() {
             <p>This is a sample card component.</p>
           </Card.Content>
         </Card>
+
+        <hr></hr>
     </>
   )
 }
