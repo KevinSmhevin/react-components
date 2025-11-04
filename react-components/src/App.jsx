@@ -4,6 +4,9 @@ import Star from './components/Star';
 import Menu from './components/Menu/index';
 import Badge from './components/Badges/Badge';
 import Banner from './components/Banners/Banner';
+import Card from './components/Card/index';
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { CiCirclePlus } from "react-icons/ci";
 
 export default function App() {
   return (
@@ -57,6 +60,28 @@ export default function App() {
             <h1>Info</h1>
         </Banner>
 
+        <hr></hr>
+
+        <Card>
+          <Card.Icon>
+            <MdOutlineKeyboardArrowDown />
+          </Card.Icon>
+          <Card.Content>
+            <h2>Card Title</h2>
+            <p>This is a sample card component.</p>
+          </Card.Content>
+        </Card>
+
+        <Card>
+          <Card.Icon>
+            <CiCirclePlus />
+          </Card.Icon>
+
+          <Card.Content>
+            <h2>Card Title</h2>
+            <p>This is a sample card component.</p>
+          </Card.Content>
+        </Card>
     </>
   )
 }

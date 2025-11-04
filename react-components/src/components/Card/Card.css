@@ -1,0 +1,65 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+    margin: 0 auto;
+    margin-bottom: 16px;
+}
+
+.card-icon {
+    background-color: #3F75FE;
+    border-radius: 12px;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -32px; /* Negative margin to overlap card-content */
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon svg {
+    color: white;
+    width: 28px;
+    height: 28px;
+}
+
+.card-content {
+    background-color: white;
+    border-radius: 12px;
+    padding: 3rem 2rem 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-align: center;
+    padding-top: 3.5rem; /* Extra top padding to account for overlapping icon */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.card-content:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-content h1, 
+.card-content h2, 
+.card-content h3, 
+.card-content h4, 
+.card-content h5,
+.card-content h6 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.card-content p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #666;
+    line-height: 1.5;
+}
