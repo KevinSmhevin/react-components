@@ -1,12 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { CiCirclePlus } from "react-icons/ci";
+
 import Star from './components/Star';
 import Menu from './components/Menu/index';
 import Badge from './components/Badges/Badge';
 import Banner from './components/Banners/Banner';
 import Card from './components/Card/index';
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import { CiCirclePlus } from "react-icons/ci";
+import TestimonialWithImage from './components/Testimonial/TestimonialWithImage';
+import TestimonialWithoutImage from './components/Testimonial/TestimonialWithoutImage';
+import testimonialImage from './assets/testimonial/stock.png';
 
 export default function App() {
   return (
@@ -85,6 +87,14 @@ export default function App() {
         </Card>
 
         <hr></hr>
+
+        <h3>Testimonial Component</h3>
+        <TestimonialWithImage img={testimonialImage} name="John Doe" title="Software Engineer">
+          <p>This is a sample testimonial with image component.</p>
+        </TestimonialWithImage>
+        <TestimonialWithoutImage icon={<CiCirclePlus />} company="Company Name" name="John Doe" title="Software Engineer">
+          <p>This is a sample testimonial without image component.</p>
+        </TestimonialWithoutImage>
     </>
   )
 }

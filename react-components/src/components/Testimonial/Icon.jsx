@@ -4,11 +4,11 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 export default function Icon({ color = 'blue', children }) {
 
     return children ? (    
-        <div className={`card-icon card-icon-${color}`}>
+        <div className={`testimonial-icon testimonial-icon-${color}`}>
             {children}
         </div>
     ) : (
-    <div className={`card-icon card-icon-${color}`}>
+    <div className={`testimonial-icon testimonial-icon-${color}`}>
         <MdOutlineKeyboardArrowDown />
     </div>
     );
