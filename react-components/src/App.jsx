@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CiCirclePlus } from "react-icons/ci";
 
 import Star from './components/Star';
@@ -6,9 +6,11 @@ import Menu from './components/Menu/index';
 import Badge from './components/Badges/Badge';
 import Banner from './components/Banners/Banner';
 import Card from './components/Card/index';
+import Tooltip from './components/Tooltips/Tooltip';
 import TestimonialWithImage from './components/Testimonial/TestimonialWithImage';
 import TestimonialWithoutImage from './components/Testimonial/TestimonialWithoutImage';
 import testimonialImage from './assets/testimonial/stock.png';
+import Button from './components/Button/Button';
 
 export default function App() {
   return (
@@ -95,6 +97,59 @@ export default function App() {
         <TestimonialWithoutImage icon={<CiCirclePlus />} company="Company Name" name="John Doe" title="Software Engineer">
           <p>This is a sample testimonial without image component.</p>
         </TestimonialWithoutImage>
+
+        <hr></hr>
+
+        <h3>Tooltip Component</h3>
+        <p>Click the buttons below to see different tooltip variants:</p>
+        <TooltipDemo />
     </>
   )
+}
+
+function TooltipDemo() {
+  const [openTooltips, setOpenTooltips] = useState({
+    blackBold: false,
+    blackLight: false,
+    blueBold: false,
+    blueLight: false,
+    magentaBold: false,
+    magentaLight: false,
+    greenBold: false,
+    greenLight: false,
+  });
+
+  const tooltips = [
+    { key: 'blackBold', color: 'black', style: 'bold', label: 'Black Bold' },
+    { key: 'blackLight', color: 'black', style: 'light', label: 'Black Light' },
+    { key: 'blueBold', color: 'blue', style: 'bold', label: 'Blue Bold' },
+    { key: 'blueLight', color: 'blue', style: 'light', label: 'Blue Light' },
+    { key: 'magentaBold', color: 'magenta', style: 'bold', label: 'Magenta Bold' },
+    { key: 'magentaLight', color: 'magenta', style: 'light', label: 'Magenta Light' },
+    { key: 'greenBold', color: 'green', style: 'bold', label: 'Green Bold' },
+    { key: 'greenLight', color: 'green', style: 'light', label: 'Green Light' },
+  ];
+
+  return (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', maxWidth: '600px', marginTop: '1rem' }}>
+      {tooltips.map(({ key, color, style, label }) => (
+        <div key={key}>
+          <Button onClick={() => setOpenTooltips(prev => ({ ...prev, [key]: true }))}>
+            {label}
+          </Button>
+          {openTooltips[key] && (
+            <Tooltip
+              title="Archive notes"
+              color={color}
+              style={style}
+              isOpen={openTooltips[key]}
+              onClose={() => setOpenTooltips(prev => ({ ...prev, [key]: false }))}
+            >
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit oluptatum tenetur.</p>
+            </Tooltip>
+          )}
+        </div>
+      ))}
+    </div>
+  );
 }

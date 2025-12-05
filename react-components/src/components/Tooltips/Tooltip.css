@@ -1,0 +1,327 @@
+/* Tooltip Overlay (Modal) */
+.tooltip-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Tooltip Container */
+.tooltip {
+    position: relative;
+    max-width: 400px;
+    width: 90%;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Tooltip Header */
+.tooltip-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.tooltip-icon-wrapper {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.tooltip-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.tooltip-title {
+    flex: 1;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.tooltip-close-button {
+    margin-left: auto;
+    padding: 0.25rem;
+    min-width: auto;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.tooltip-close-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Tooltip Text */
+.tooltip-text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+/* Tooltip Pointer (Triangle) */
+.tooltip-pointer {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid;
+}
+
+/* Color Sets - Bold Style (Dark Background) */
+.tooltip-bold.tooltip-black {
+    background-color: #1F2937;
+    color: #FFFFFF;
+}
+
+.tooltip-bold.tooltip-black .tooltip-icon {
+    color: #FFFFFF;
+}
+
+.tooltip-bold.tooltip-black .tooltip-title {
+    color: #FFFFFF;
+}
+
+.tooltip-bold.tooltip-black .tooltip-text {
+    color: #D1D5DB;
+}
+
+.tooltip-bold.tooltip-black .tooltip-close-button {
+    color: #FFFFFF;
+}
+
+.tooltip-bold.tooltip-black .tooltip-close-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tooltip-bold.tooltip-black .tooltip-pointer {
+    border-top-color: #1F2937;
+}
+
+.tooltip-bold.tooltip-blue {
+    background-color: #1E40AF;
+    color: #FFFFFF;
+}
+
+.tooltip-bold.tooltip-blue .tooltip-icon {
+    color: #FFFFFF;
+}
+
+.tooltip-bold.tooltip-blue .tooltip-title {
+    color: #FFFFFF;
+}
+
+.tooltip-bold.tooltip-blue .tooltip-text {
+    color: #93C5FD;
+}
+
+.tooltip-bold.tooltip-blue .tooltip-close-button {
+    color: #FFFFFF;
+}
+
+.tooltip-bold.tooltip-blue .tooltip-close-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tooltip-bold.tooltip-blue .tooltip-pointer {
+    border-top-color: #1E40AF;
+}
+
+.tooltip-bold.tooltip-magenta {
+    background-color: #9F1239;
+    color: #FFFFFF;
+}
+
+.tooltip-bold.tooltip-magenta .tooltip-icon {
+    color: #FFFFFF;
+}
+
+.tooltip-bold.tooltip-magenta .tooltip-title {
+    color: #FFFFFF;
+}
+
+.tooltip-bold.tooltip-magenta .tooltip-text {
+    color: #F9A8D4;
+}
+
+.tooltip-bold.tooltip-magenta .tooltip-close-button {
+    color: #FFFFFF;
+}
+
+.tooltip-bold.tooltip-magenta .tooltip-close-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tooltip-bold.tooltip-magenta .tooltip-pointer {
+    border-top-color: #9F1239;
+}
+
+.tooltip-bold.tooltip-green {
+    background-color: #166534;
+    color: #FFFFFF;
+}
+
+.tooltip-bold.tooltip-green .tooltip-icon {
+    color: #FFFFFF;
+}
+
+.tooltip-bold.tooltip-green .tooltip-title {
+    color: #FFFFFF;
+}
+
+.tooltip-bold.tooltip-green .tooltip-text {
+    color: #86EFAC;
+}
+
+.tooltip-bold.tooltip-green .tooltip-close-button {
+    color: #FFFFFF;
+}
+
+.tooltip-bold.tooltip-green .tooltip-close-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tooltip-bold.tooltip-green .tooltip-pointer {
+    border-top-color: #166534;
+}
+
+/* Color Sets - Light Style (Light Background) */
+.tooltip-light.tooltip-black {
+    background-color: #F9FAFB;
+    color: #1F2937;
+}
+
+.tooltip-light.tooltip-black .tooltip-icon {
+    color: #374151;
+}
+
+.tooltip-light.tooltip-black .tooltip-title {
+    color: #1F2937;
+}
+
+.tooltip-light.tooltip-black .tooltip-text {
+    color: #4B5563;
+}
+
+.tooltip-light.tooltip-black .tooltip-close-button {
+    color: #374151;
+}
+
+.tooltip-light.tooltip-black .tooltip-close-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.tooltip-light.tooltip-black .tooltip-pointer {
+    border-top-color: #F9FAFB;
+}
+
+.tooltip-light.tooltip-blue {
+    background-color: #EFF6FF;
+    color: #1E40AF;
+}
+
+.tooltip-light.tooltip-blue .tooltip-icon {
+    color: #1E40AF;
+}
+
+.tooltip-light.tooltip-blue .tooltip-title {
+    color: #1E40AF;
+}
+
+.tooltip-light.tooltip-blue .tooltip-text {
+    color: #1E3A8A;
+}
+
+.tooltip-light.tooltip-blue .tooltip-close-button {
+    color: #1E40AF;
+}
+
+.tooltip-light.tooltip-blue .tooltip-close-button:hover {
+    background-color: rgba(30, 64, 175, 0.1);
+}
+
+.tooltip-light.tooltip-blue .tooltip-pointer {
+    border-top-color: #EFF6FF;
+}
+
+.tooltip-light.tooltip-magenta {
+    background-color: #FDF2F8;
+    color: #9F1239;
+}
+
+.tooltip-light.tooltip-magenta .tooltip-icon {
+    color: #9F1239;
+}
+
+.tooltip-light.tooltip-magenta .tooltip-title {
+    color: #9F1239;
+}
+
+.tooltip-light.tooltip-magenta .tooltip-text {
+    color: #BE185D;
+}
+
+.tooltip-light.tooltip-magenta .tooltip-close-button {
+    color: #9F1239;
+}
+
+.tooltip-light.tooltip-magenta .tooltip-close-button:hover {
+    background-color: rgba(159, 18, 57, 0.1);
+}
+
+.tooltip-light.tooltip-magenta .tooltip-pointer {
+    border-top-color: #FDF2F8;
+}
+
+.tooltip-light.tooltip-green {
+    background-color: #F0FDF4;
+    color: #166534;
+}
+
+.tooltip-light.tooltip-green .tooltip-icon {
+    color: #166534;
+}
+
+.tooltip-light.tooltip-green .tooltip-title {
+    color: #166534;
+}
+
+.tooltip-light.tooltip-green .tooltip-text {
+    color: #15803D;
+}
+
+.tooltip-light.tooltip-green .tooltip-close-button {
+    color: #166534;
+}
+
+.tooltip-light.tooltip-green .tooltip-close-button:hover {
+    background-color: rgba(22, 101, 52, 0.1);
+}
+
+.tooltip-light.tooltip-green .tooltip-pointer {
+    border-top-color: #F0FDF4;
+}
+
