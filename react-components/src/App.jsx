@@ -11,6 +11,7 @@ import TestimonialWithImage from './components/Testimonial/TestimonialWithImage'
 import TestimonialWithoutImage from './components/Testimonial/TestimonialWithoutImage';
 import testimonialImage from './assets/testimonial/stock.png';
 import Button from './components/Button/Button';
+import Popup from './components/Popups/Popup';
 
 export default function App() {
   return (
@@ -103,6 +104,12 @@ export default function App() {
         <h3>Tooltip Component</h3>
         <p>Click the buttons below to see different tooltip variants:</p>
         <TooltipDemo />
+
+        <hr></hr>
+
+        <h3>Popup Component</h3>
+        <p>Click the buttons below to see different popup notifications (they appear in the lower right):</p>
+        <PopupDemo />
     </>
   )
 }
@@ -150,6 +157,93 @@ function TooltipDemo() {
           )}
         </div>
       ))}
+    </div>
+  );
+}
+
+function PopupDemo() {
+  const [popupCounters, setPopupCounters] = useState({
+    success: 0,
+    warning: 0,
+    information: 0,
+    error: 0,
+  });
+
+  const popups = [
+    { 
+      key: 'success', 
+      style: 'success', 
+      title: 'Success', 
+      message: 'Your work has been saved',
+      label: 'Show Success Popup'
+    },
+    { 
+      key: 'warning', 
+      style: 'warning', 
+      title: 'Warning', 
+      message: 'A network error was detected',
+      label: 'Show Warning Popup'
+    },
+    { 
+      key: 'information', 
+      style: 'information', 
+      title: 'Information', 
+      message: 'Please read updated information',
+      label: 'Show Information Popup'
+    },
+    { 
+      key: 'error', 
+      style: 'error', 
+      title: 'Error', 
+      message: 'Please re-save your work again',
+      label: 'Show Error Popup'
+    },
+  ];
+
+  const triggerPopup = (key) => {
+    setPopupCounters(prev => ({ ...prev, [key]: prev[key] + 1 }));
+  };
+
+  const handlePopupClose = (key) => {
+    setPopupCounters(prev => ({ ...prev, [key]: 0 }));
+  };
+
+  return (
+    <div>
+      {/* Demonstrate that popups can be triggered from deeply nested components */}
+      <div style={{ padding: '20px', border: '1px solid #ccc', borderRadius: '8px', marginBottom: '1rem' }}>
+        <h4>Deeply Nested Component Example</h4>
+        <div style={{ padding: '10px', background: '#f5f5f5', borderRadius: '4px' }}>
+          <div style={{ padding: '10px', background: '#e5e5e5', borderRadius: '4px' }}>
+            <div style={{ padding: '10px', background: '#d5d5d5', borderRadius: '4px' }}>
+              <p>This is a deeply nested component (3 levels deep)</p>
+              <Button onClick={() => triggerPopup('success')}>
+                Trigger Success Popup from here
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', maxWidth: '600px' }}>
+        {popups.map(({ key, style, title, message, label }) => (
+          <div key={key}>
+            <Button onClick={() => triggerPopup(key)}>
+              {label}
+            </Button>
+            {popupCounters[key] > 0 && (
+              <Popup
+                key={popupCounters[key]}
+                title={title}
+                style={style}
+                onClose={() => handlePopupClose(key)}
+              >
+                {message}
+              </Popup>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
